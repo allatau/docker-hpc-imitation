@@ -12,7 +12,6 @@ RUN yum install -y sed screen tmux byobu which vim-enhanced
 RUN sshd-keygen
 RUN sed -i 's/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config && sed -i 's/UsePAM.*/UsePAM no/g' /etc/ssh/sshd_config
 RUN sed -i 's/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
-
 # setup default user
 RUN useradd admin -G wheel -s /bin/bash -m
 RUN echo 'admin:admin' | chpasswd
