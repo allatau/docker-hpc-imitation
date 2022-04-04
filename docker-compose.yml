@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  ubuntu-openfoam9-cluster:
+    build:
+      context: ./docker/ubuntu-openfoam9-cluster
+    container_name: ubuntu-openfoam9-cluster
+    ports:
+      - "2022:22"
+
+
+  ubuntu-openfoam8-cluster:
+    build:
+      context: ./docker/ubuntu-openfoam8-cluster
+    container_name: ubuntu-openfoam8-cluster
+    ports:
+      - "3022:22"
+
+  centos7-pbspro:
+    build:
+      context: ./docker/centos7-pbspro
+    container_name: centos7-pbspro
+    ports:
+      - "4022:22"
