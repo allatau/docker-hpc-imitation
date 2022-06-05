@@ -22,3 +22,27 @@ services:
     container_name: centos7-pbspro
     ports:
       - "4022:22"
+
+  ubuntu-openfoam8-pbs:
+
+    # not available so far
+    # environment:
+    #   - HOST=pbshost
+
+    # keep alive ( not available so far )
+    # tty: true
+    # stdin_open: true
+
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        # depends on the .env file
+        HOST: "pbshost"
+
+    image: "cetusk/pbs-ubuntu16.04:latest"
+
+    container_name: "worker"
+
+    # depends on the .env file
+    hostname: "pbshost"
