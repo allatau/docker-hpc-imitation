@@ -23,26 +23,15 @@ services:
     ports:
       - "4022:22"
 
-  ubuntu-openfoam8-pbs:
-
-    # not available so far
-    # environment:
-    #   - HOST=pbshost
-
-    # keep alive ( not available so far )
-    # tty: true
-    # stdin_open: true
-
+  ubuntu-openfoam7-pbs:
     build:
-      context: ./
-      dockerfile: Dockerfile
+      context: ./docker/ubuntu-openfoam7-pbs
       args:
         # depends on the .env file
         HOST: "pbshost"
-
-    image: "cetusk/pbs-ubuntu16.04:latest"
-
-    container_name: "worker"
+    ports:
+      - "5022:22"
+    container_name: ubuntu-openfoam7-pbs
 
     # depends on the .env file
     hostname: "pbshost"
