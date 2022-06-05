@@ -8,10 +8,6 @@ RUN apt-get install -y \
     gnupg \
     software-properties-common
 
-# Create new user
-RUN useradd --user-group --create-home --shell /bin/bash cfd ;\
-    echo "cfd ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
 # Add repo for OpenFoam
 RUN wget -O - http://dl.openfoam.org/gpg.key | apt-key add - ;\
     add-apt-repository http://dl.openfoam.org/ubuntu ;\
