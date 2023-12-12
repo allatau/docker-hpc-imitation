@@ -1,3 +1,3 @@
 docker-compose up -d
-timeout 20
+sleep 10
 docker-compose exec ubuntu-openfoam7-pbs service ssh restart
