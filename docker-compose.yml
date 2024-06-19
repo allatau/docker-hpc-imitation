@@ -35,3 +35,10 @@ services:
 
     # depends on the .env file
     hostname: "pbshost"
+
+  ubuntu-kolsol-cluster:
+    build:
+      context: ./docker/ubuntu-kolsol-cluster
+    container_name: ubuntu-kolsol-cluster
+    ports:
+      - "6022:22"
